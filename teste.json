@@ -1,9 +1,9 @@
 [{
-		"name": "Maria",
+		"nome": "Maria",
 		"data": "28/07/1984"
 	},
 	{
-		"name": "José",
+		"nome": "José",
 		"data": "28/10/1984"
 	}
 ]
