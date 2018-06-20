@@ -1,16 +1,58 @@
 <!DOCTYPE HTML>
 <html>
+<head>
+    <meta charset="UTF-8"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alasql@0.4"></script>
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+
+    <style>
+        .dataTables_filter {
+            display: none;
+        }
+    </style>
+
+</head>
 <body>
 
-  <p>Before the script...</p>
-
   <script>
-    alert( 'Hello, world!' );
+$(document).ready(function () {
+        $.getJSON("/teste.json", function (json) {
+
+            $('#teste').DataTable({
+                paging: false,
+                info: false,
+                data: json,
+                columns: [
+                    {
+                        data: "nome"
+                    },
+                    {data: "data"}
+                ]
+            });
+        });
+    });
+
+  
   </script>
 
-  <p>...After the script.</p>
 
-</body>
+            <table id="teste" class="display compact">
+                <thead>
+                <tr>
+                    <th>Projeto</th>
+                    <th>Fase</th>
+                </tr>
+                </thead>
+
+            </table>
+  
+  </body>
 
 </html
